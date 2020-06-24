@@ -1,8 +1,11 @@
-<template>
+<template lang="html">
   <div>
     <h1>Countries</h1>
+      <select id="country_select" v-model="selectedCountry">
+        <option disabled value="">Select a country</option>
+        <option v-for="country in countries" :value="country">{{country.name}}</option>
+      </select>
     <div class="main-container">
-      <countries-list :countries="countries"></countries-list>
       <country-detail :country="selectedCountry"></country-detail>
     </div>
   </div>
@@ -18,7 +21,7 @@ export default {
   data(){
     return {
       countries: [],
-      selectCountry: null
+      selectedCountry: null
     };
   },
   mounted(){

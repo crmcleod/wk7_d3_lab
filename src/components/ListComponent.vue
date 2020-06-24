@@ -1,5 +1,5 @@
-<template>
-  <li v-on:click="handleClick">{{country.name}}</li>
+<template lang="html">
+  <li v-on:change="handleChanhe">{{country.name}}</li>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
     name: 'list-component',
     props: ['country'],
     methods: {
-        handleClick() {
+        handleChange() {
             eventBus.$emit('country-selected', this.country);
         }
     }
